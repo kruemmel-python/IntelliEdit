@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="de" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>code_execution Modul &mdash; AI IntelliEdit Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f029ec32"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=9bf55d28"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="gui_utils Modul" href="gui_utils.html" />
+    <link rel="prev" title="AI IntelliEdit Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AI IntelliEdit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Dokumentation durchsuchen" aria-label="Dokumentation durchsuchen" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Inhaltsverzeichnis:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">code_execution Modul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_utils.html">gui_utils Modul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main Modul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_utils.html">model_utils Modul</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AI IntelliEdit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">code_execution Modul</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/code_execution.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="code-execution-modul">
+<h1>code_execution Modul<a class="headerlink" href="#code-execution-modul" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">code_execution.</span></span><span class="sig-name descname"><span class="pre">execute_code</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Führt den im <code class="docutils literal notranslate"><span class="pre">text_area</span></code> enthaltenen Code aus und zeigt die Ausgabe im <code class="docutils literal notranslate"><span class="pre">output_text</span></code> an.</p>
+<p>Diese Funktion führt den im <code class="docutils literal notranslate"><span class="pre">text_area</span></code> enthaltenen Code aus und zeigt die Ausgabe im <code class="docutils literal notranslate"><span class="pre">output_text</span></code> an.
+Sie fängt sowohl die Standardausgabe als auch die Fehlerausgabe ab und zeigt sie im Ausgabebereich an.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">code_execution.</span></span><span class="sig-name descname"><span class="pre">reset_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Setzt den Text im <code class="docutils literal notranslate"><span class="pre">output_text</span></code> Widget zurück.</p>
+<p>Diese Funktion setzt den Text im <code class="docutils literal notranslate"><span class="pre">output_text</span></code> Widget zurück, indem sie den gesamten Inhalt löscht.
+Sie stellt sicher, dass das Widget bearbeitbar ist, bevor der Inhalt gelöscht wird, und deaktiviert die Bearbeitung danach wieder.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">code_execution.</span></span><span class="sig-name descname"><span class="pre">set_output_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_widget</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Setzt das globale <code class="docutils literal notranslate"><span class="pre">output_text</span></code> auf das gegebene Text-Widget.</p>
+<p>Diese Funktion setzt das globale <code class="docutils literal notranslate"><span class="pre">output_text</span></code> auf das gegebene Text-Widget, das als Ausgabebereich verwendet wird.
+Dies ist notwendig, um die Ausgabe des ausgeführten Codes anzuzeigen.</p>
+<section id="parameter">
+<h2>Parameter:<a class="headerlink" href="#parameter" title="Link to this heading"></a></h2>
+<p>text_widget (tk.Text): Das Text-Widget, das als Ausgabebereich verwendet wird.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">code_execution.</span></span><span class="sig-name descname"><span class="pre">set_root_in_code_execution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_widget</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Setzt das globale <code class="docutils literal notranslate"><span class="pre">root</span></code> auf das gegebene Root-Widget.</p>
+<p>Diese Funktion setzt das globale <code class="docutils literal notranslate"><span class="pre">root</span></code> auf das gegebene Root-Widget der Tkinter-Anwendung.
+Dies ist notwendig, um auf das Hauptfenster von anderen Modulen aus zugreifen zu können.</p>
+<section id="id1">
+<h2>Parameter:<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>root_widget (tk.Tk): Das Root-Widget der Tkinter-Anwendung.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">code_execution.</span></span><span class="sig-name descname"><span class="pre">set_text_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_widget</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Setzt das globale <code class="docutils literal notranslate"><span class="pre">text_area</span></code> auf das gegebene Text-Widget.</p>
+<p>Diese Funktion setzt das globale <code class="docutils literal notranslate"><span class="pre">text_area</span></code> auf das gegebene Text-Widget, das als Eingabebereich verwendet wird.
+Dies ist notwendig, um den eingegebenen Code zu erfassen und auszuführen.</p>
+<section id="id2">
+<h2>Parameter:<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>text_widget (tk.Text): Das Text-Widget, das als Eingabebereich verwendet wird.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">code_execution.</span></span><span class="sig-name descname"><span class="pre">update_output_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Aktualisiert den Text im <code class="docutils literal notranslate"><span class="pre">output_text</span></code> Widget.</p>
+<p>Diese Funktion aktualisiert den Text im <code class="docutils literal notranslate"><span class="pre">output_text</span></code> Widget, indem sie den gegebenen Text einfügt.
+Sie stellt sicher, dass das Widget bearbeitbar ist, bevor der Text eingefügt wird, und deaktiviert die Bearbeitung danach wieder.</p>
+<section id="id3">
+<h2>Parameter:<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>text (str): Der Text, der in das <code class="docutils literal notranslate"><span class="pre">output_text</span></code> Widget eingefügt werden soll.</p>
+</section>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="AI IntelliEdit Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Zurück</a>
+        <a href="gui_utils.html" class="btn btn-neutral float-right" title="gui_utils Modul" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ralf Krümmel.</p>
+  </div>
+
+  Erstellt mit <a href="https://www.sphinx-doc.org/">Sphinx</a> mit einem
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

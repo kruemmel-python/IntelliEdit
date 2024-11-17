@@ -1,0 +1,8 @@
+model_utils Modul
+====================
+
+.. automodule:: model_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :no-index:

@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="de" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>main Modul &mdash; AI IntelliEdit Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f029ec32"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=9bf55d28"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="model_utils Modul" href="model_utils.html" />
+    <link rel="prev" title="gui_utils Modul" href="gui_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AI IntelliEdit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Dokumentation durchsuchen" aria-label="Dokumentation durchsuchen" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Inhaltsverzeichnis:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code_execution.html">code_execution Modul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_utils.html">gui_utils Modul</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">main Modul</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module">Module:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#globale-variablen">Globale Variablen:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_utils.html">model_utils Modul</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AI IntelliEdit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">main Modul</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/main.rst.txt" rel="nofollow"> Quelltext anzeigen</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="main-modul">
+<h1>main Modul<a class="headerlink" href="#main-modul" title="Link to this heading"></a></h1>
+<p>Code-Editor-Anwendung</p>
+<p>Dieses Modul enthält die Hauptlogik einer Code-Editor-Anwendung mit einer grafischen Benutzeroberfläche,
+die von <cite>tkinter</cite> bereitgestellt wird. Es bietet Funktionen zum Schreiben, Ausführen und
+Zurücksetzen von Code sowie zur Integration eines KI-Modells zur Code-Vervollständigung.</p>
+<section id="module">
+<h2>Module:<a class="headerlink" href="#module" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>gui_utils: Enthält Funktionen zur Erstellung und Verwaltung der Benutzeroberfläche.</p></li>
+<li><p>code_execution: Beinhaltet die Logik zur Codeausführung und -anzeige.</p></li>
+<li><p>model_utils: Initialisiert das KI-Modell und generiert Code-Vorschläge.</p></li>
+</ul>
+</section>
+<section id="globale-variablen">
+<h2>Globale Variablen:<a class="headerlink" href="#globale-variablen" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>script_dir (str): Der Verzeichnispfad des Skripts.</p></li>
+<li><p>local_model_path (str): Der Speicherpfad für das lokale Modell.</p></li>
+<li><p>tokenizer: Der Tokenizer für das KI-Modell.</p></li>
+<li><p>model: Das geladene KI-Modell.</p></li>
+<li><p>typing_delay (int): Verzögerung in Millisekunden zwischen Tastatureingaben.</p></li>
+<li><p>typing_timer: Timer-Objekt zur Steuerung der Eingabeverzögerung.</p></li>
+<li><p>model_loaded (bool): Gibt an, ob das KI-Modell erfolgreich geladen wurde.</p></li>
+</ul>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Hauptfunktion zum Starten der Anwendung.</p>
+<p>Diese Funktion initialisiert die grafische Benutzeroberfläche, lädt das Modell
+für Codevorschläge und startet die Haupt-Event-Schleife der Anwendung.</p>
+<section id="ablauf">
+<h2>Ablauf:<a class="headerlink" href="#ablauf" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Erstellen des Hauptfensters (<cite>root</cite>) mit <cite>tkinter</cite>.</p></li>
+<li><p>Konfiguration der GUI-Elemente, einschließlich Textfelder und Buttons.</p></li>
+<li><p>Initialisierung des Modells in einem separaten Thread.</p></li>
+<li><p>Start der Haupt-Event-Schleife mit <cite>root.mainloop()</cite>.</p></li>
+</ol>
+</section>
+<section id="verwendete-funktionen">
+<h2>Verwendete Funktionen:<a class="headerlink" href="#verwendete-funktionen" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>set_root(root): Konfiguriert die <cite>root</cite>-Variable im <cite>gui_utils</cite>-Modul.</p></li>
+<li><p>set_root_in_code_execution(root): Konfiguriert die <cite>root</cite>-Variable im <cite>code_execution</cite>-Modul.</p></li>
+<li><p>create_gui(root): Erstellt die GUI und gibt GUI-Elemente zurück.</p></li>
+<li><p>initialize_model(script_dir, local_model_path, suggestion_label, root):
+Lädt das KI-Modell in einem separaten Thread.</p></li>
+</ul>
+</section>
+<section id="hinweise">
+<h2>Hinweise:<a class="headerlink" href="#hinweise" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Das Modell wird in einem separaten Thread geladen, um die Haupt-Event-Schleife nicht zu blockieren.</p></li>
+<li><p><cite>root</cite> ist das Hauptfenster der Anwendung, das von <cite>tkinter</cite> verwaltet wird.</p></li>
+</ul>
+</section>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gui_utils.html" class="btn btn-neutral float-left" title="gui_utils Modul" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Zurück</a>
+        <a href="model_utils.html" class="btn btn-neutral float-right" title="model_utils Modul" accesskey="n" rel="next">Weiter <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ralf Krümmel.</p>
+  </div>
+
+  Erstellt mit <a href="https://www.sphinx-doc.org/">Sphinx</a> mit einem
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    bereitgestellt von <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

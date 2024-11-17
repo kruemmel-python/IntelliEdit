@@ -11,21 +11,58 @@ typing_delay = 500  # in Millisekunden
 typing_timer = None
 root = None
 
-def set_root(root_widget):
+def set_root(root_widget: tk.Tk) -> None:
+    """
+    Setzt das globale root-Widget.
+
+    Diese Funktion setzt das globale root-Widget, das das Hauptfenster der Anwendung darstellt.
+    Dies ist notwendig, um auf das Hauptfenster von anderen Modulen aus zugreifen zu können.
+
+    Parameter:
+    ----------
+    root_widget (tk.Tk): Das Hauptfenster-Widget.
+    """
     global root
     root = root_widget
 
-def create_gui(root):
+def create_gui(root: tk.Tk) -> tuple:
+    """
+    Erstellt die grafische Benutzeroberfläche.
+
+    Diese Funktion erstellt und konfiguriert die grafische Benutzeroberfläche der Anwendung.
+    Sie erstellt ein Textfeld für die Code-Eingabe, Zeilennummern, Syntaxhervorhebung,
+    ein Label für Code-Vorschläge, Buttons zum Ausführen und Zurücksetzen des Codes sowie
+    ein Textfeld für die Ausgabe.
+
+    Parameter:
+    ----------
+    root (tk.Tk): Das Hauptfenster-Widget.
+
+    Rückgabe:
+    ---------
+    tuple: Ein Tuple mit den erstellten Widgets (text_area, suggestion_label, execute_button, reset_button, output_text).
+    """
     global text_area, suggestion_label, output_text
 
     # Textfeld für die Code-Eingabe
-    text_area = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=20, undo=True)
+    text_area = scrolledtext.ScrolledText(
+        root, wrap=tk.WORD, width=80, height=20, undo=True
+    )
     text_area.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=10, pady=10)
     text_area.bind("<KeyRelease>", start_typing_timer)
     text_area.bind("<Control-space>", generate_code_suggestion_on_key)
 
     # Zeilennummern hinzufügen
-    line_numbers = tk.Text(root, width=4, padx=10, takefocus=0, border=0, background='lightgrey', state='disabled', wrap='none')
+    line_numbers = tk.Text(
+        root,
+        width=4,
+        padx=10,
+        takefocus=0,
+        border=0,
+        background="lightgrey",
+        state="disabled",
+        wrap="none",
+    )
     line_numbers.pack(side=tk.LEFT, fill=tk.Y, padx=(10, 0))
 
     # Syntaxhervorhebung hinzufügen
@@ -94,15 +131,33 @@ def create_gui(root):
     text_area.tag_configure("Token.Generic.Traceback", foreground="purple")
 
     def update_line_numbers(event=None):
+        """
+        Aktualisiert die Zeilennummern im Textfeld.
+
+        Diese Funktion aktualisiert die Zeilennummern im Textfeld, basierend auf dem aktuellen Inhalt des Textfeldes.
+
+        Parameter:
+        ----------
+        event: Das Ereignis, das die Aktualisierung auslöst.
+        """
         line_numbers.config(state=tk.NORMAL)
         line_numbers.delete(1.0, tk.END)
         content = text_area.get(1.0, tk.END)
-        line_count = content.count('\n')
+        line_count = content.count("\n")
         line_number_string = "\n".join(str(no) for no in range(1, line_count + 2))
         line_numbers.insert(1.0, line_number_string)
         line_numbers.config(state=tk.DISABLED)
 
     def highlight_syntax(event=None):
+        """
+        Hebt die Syntax im Textfeld hervor.
+
+        Diese Funktion hebt die Syntax im Textfeld hervor, basierend auf dem aktuellen Inhalt des Textfeldes.
+
+        Parameter:
+        ----------
+        event: Das Ereignis, das die Hervorhebung auslöst.
+        """
         content = text_area.get(1.0, tk.END)
         text_area.mark_set("range_start", 1.0)
         data = content
@@ -111,14 +166,25 @@ def create_gui(root):
             text_area.tag_add(str(token), "range_start", "range_end")
             text_area.mark_set("range_start", "range_end")
 
-    text_area.bind("<KeyRelease>", lambda event: (update_line_numbers(), highlight_syntax()))
-    text_area.bind("<ButtonRelease>", lambda event: (update_line_numbers(), highlight_syntax()))
+    text_area.bind(
+        "<KeyRelease>", lambda event: (update_line_numbers(), highlight_syntax())
+    )
+    text_area.bind(
+        "<ButtonRelease>", lambda event: (update_line_numbers(), highlight_syntax())
+    )
 
     # Rahmen und Label für den Code-Vorschlag
     suggestion_frame = Frame(root, bg="lightgrey", bd=2, relief="groove")
     suggestion_frame.pack(fill="x", padx=10, pady=5)
 
-    suggestion_label = tk.Label(suggestion_frame, text="Lade Modell...", wraplength=700, justify="left", anchor="w", bg="lightgrey")
+    suggestion_label = tk.Label(
+        suggestion_frame,
+        text="Lade Modell...",
+        wraplength=700,
+        justify="left",
+        anchor="w",
+        bg="lightgrey",
+    )
     suggestion_label.pack(padx=10, pady=5)
 
     # Button zum Ausführen des Codes
@@ -136,18 +202,42 @@ def create_gui(root):
 
     return text_area, suggestion_label, execute_button, reset_button, output_text
 
-def start_typing_timer(event=None):
+def start_typing_timer(event=None) -> None:
+    """
+    Startet den Timer für die Code-Vorschlagsgenerierung.
+
+    Diese Funktion startet einen Timer, der nach einer bestimmten Verzögerung die Generierung von Code-Vorschlägen auslöst.
+    Wenn der Timer bereits läuft, wird er zurückgesetzt.
+
+    Parameter:
+    ----------
+    event: Das Ereignis, das den Timer startet.
+    """
     global typing_timer
     if typing_timer is not None:
         root.after_cancel(typing_timer)
     typing_timer = root.after(typing_delay, delayed_generate_code_suggestion)
 
-def delayed_generate_code_suggestion():
+def delayed_generate_code_suggestion() -> None:
+    """
+    Generiert einen Code-Vorschlag nach einer Verzögerung.
+
+    Diese Funktion wird nach einer Verzögerung aufgerufen, um einen Code-Vorschlag basierend auf dem aktuellen Inhalt des Textfeldes zu generieren.
+    """
     input_text = text_area.get("1.0", tk.END).strip()
     if input_text:
         generate_code_suggestion(input_text, suggestion_label, root)
 
-def generate_code_suggestion_on_key(event=None):
+def generate_code_suggestion_on_key(event=None) -> None:
+    """
+    Generiert einen Code-Vorschlag, wenn eine bestimmte Taste gedrückt wird.
+
+    Diese Funktion wird aufgerufen, wenn eine bestimmte Taste (z.B. Strg+Leertaste) gedrückt wird, um einen Code-Vorschlag basierend auf dem aktuellen Inhalt des Textfeldes zu generieren.
+
+    Parameter:
+    ----------
+    event: Das Ereignis, das die Vorschlagsgenerierung auslöst.
+    """
     input_text = text_area.get("1.0", tk.END).strip()
     if input_text:
         generate_code_suggestion(input_text, suggestion_label, root)

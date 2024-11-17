@@ -1,0 +1,14 @@
+AI IntelliEdit Documentation
+============================
+
+Willkommen bei der Dokumentation von AI IntelliEdit!
+Diese Dokumentation beschreibt die Funktionsweise der Anwendung, die Module und ihre Verwendung.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Inhaltsverzeichnis:
+
+   code_execution
+   gui_utils
+   main
+   model_utils
