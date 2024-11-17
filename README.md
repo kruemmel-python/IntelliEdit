@@ -1,10 +1,10 @@
 # AI CodeHelper
 
-AI CodeHelper ist ein benutzerfreundlicher Code-Editor mit integrierter KI-gestützter Code-Vorschlagsfunktion. Er bietet Syntaxhervorhebung, Zeilennummern und die Möglichkeit, Code direkt im Editor auszuführen. Code-Vorschlagsfunktion durch Tastenkombination STRG + SPACE
-
-
 ![image](https://github.com/user-attachments/assets/a44a5fe0-c36f-418a-a666-8933281f14dc)
 
+# IntelliEdit
+
+IntelliEdit ist ein benutzerfreundlicher Code-Editor mit integrierter KI-gestützter Code-Vorschlagsfunktion. Er bietet Syntaxhervorhebung, Zeilennummern und die Möglichkeit, Code direkt im Editor auszuführen. Mit der KI-gestützten Code-Vorschlagsfunktion können Sie schneller und effizienter programmieren.
 
 ## Inhaltsverzeichnis
 
@@ -36,7 +36,7 @@ AI CodeHelper ist ein benutzerfreundlicher Code-Editor mit integrierter KI-gest�
 
 - **Syntaxhervorhebung**: Unterstützung für Python-Syntaxhervorhebung.
 - **Zeilennummern**: Anzeige von Zeilennummern neben dem Code.
-- **Code-Vorschläge**: KI-gestützte Code-Vorschläge basierend auf dem eingegebenen Text. STRG + SPACE
+- **KI-gestützte Code-Vorschläge**: Generierung von Code-Vorschlägen basierend auf dem eingegebenen Text.
 - **Code-Ausführung**: Direkte Ausführung des Codes im Editor mit Anzeige der Ausgabe und Fehlermeldungen.
 
 ## Verwendung
@@ -51,7 +51,7 @@ AI CodeHelper ist ein benutzerfreundlicher Code-Editor mit integrierter KI-gest�
    - Zeilennummern werden automatisch neben dem Code angezeigt.
    - Der Code wird farblich hervorgehoben, um die Lesbarkeit zu verbessern.
 
-3. **Code-Vorschläge erhalten**:
+3. **KI-gestützte Code-Vorschläge erhalten**:
    - Drücken Sie `Ctrl + Space`, um KI-gestützte Code-Vorschläge basierend auf dem eingegebenen Text zu erhalten.
    - Die Vorschläge werden im Vorschlagsfeld angezeigt.
 
@@ -68,7 +68,7 @@ Beiträge sind herzlich willkommen! Wenn Sie einen Fehler gefunden haben oder ei
 
 1. **Forken des Repositories**:
    ```sh
-   git clone https://github.com//kruemmel-python/IntelliEdit.git
+   git clone https://github.com/kruemmel-python/IntelliEdit.git
    cd IntelliEdit
    git checkout -b feature/IhreFunktion
    ```
@@ -97,47 +97,11 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden
 
 ## Kontakt
 
-Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie mich über [Ihre E-Mail-Adresse](mailto:IhreE-Mail-Adresse) kontaktieren.
+Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie mich über [ralf.kruemmel+python@outlook.de](mailto:ralf.kruemmel+python@outlook.de) kontaktieren.
 
 ## Danksagungen
 
+- [Salesforce]([https://pygments.org/](https://huggingface.co/Salesforce/codegen-350M-mono)) für das KI Modell.
 - [Pygments](https://pygments.org/) für die Syntaxhervorhebung.
 - [Transformers](https://huggingface.co/transformers/) für die KI-gestützten Code-Vorschläge.
 
----
-
-Vielen Dank, dass Sie AI CodeHelper verwenden!
-```
-
-### `requirements.txt`
-
-Stellen Sie sicher, dass Sie eine `requirements.txt`-Datei im Projektverzeichnis haben, die alle erforderlichen Abhängigkeiten auflistet:
-
-```
-transformers
-pygments
-```
-
-### `LICENSE`
-```
-MIT License
-
-Copyright (c) 2023 Ralf Krümmel
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
