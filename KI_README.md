@@ -49,7 +49,7 @@ AI CodeHelper kann vollständig offline verwendet werden, nachdem das Modell ein
 
 ## Kontakt
 
-Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie mich über [Ihre E-Mail-Adresse](mailto:IhreE-Mail-Adresse) kontaktieren.
+Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie mich über [ralf.kruemmel+python@outlook.de](mailto:ralf.kruemmel+python@outlook.de) kontaktieren.
 
 ---
 
